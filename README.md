@@ -5,3 +5,6 @@
 - Łukasz Kozak
 ## Schemat procesu:
 ![Schemat](img/Schemat.png)
+### ToDo
+- Python state machine - konsolowo - przeskakiwanie po stanach
+- Znaleźć projekt z symulacją UAV
