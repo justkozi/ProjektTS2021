@@ -82,3 +82,4 @@ fabric.properties
 .idea/modules.xml
 .idea/ProjektTS2021.iml
 .idea/vcs.xml
+*.pyc
