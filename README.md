@@ -7,4 +7,4 @@
 ![Schemat](img/Schemat.png)
 ### ToDo
 - [x] Python state machine - konsolowo - przeskakiwanie po stanach 
-- [ ] Znaleźć projekt z symulacją UAV
+- [x] Znaleźć projekt z symulacją UAV - https://ardupilot.org/dev/docs/ros-gazebo.html
