@@ -8,8 +8,5 @@
 ### ToDo
 - [x] Python state machine - konsolowo - przeskakiwanie po stanach 
 - [x] Znaleźć projekt z symulacją UAV - https://ardupilot.org/dev/docs/ros-gazebo.html
-<<<<<<< Updated upstream
-=======
 - [ ] Stałe ze StateMAchine.py do YAML-a 
 - [ ] plt.figure - przekazywać AX (na nowo ładowane grafu)
->>>>>>> Stashed changes
