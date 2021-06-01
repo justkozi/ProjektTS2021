@@ -137,6 +137,7 @@ print("Aby dokonać przejscia podaj wartosc z ktorej tranzycji_do ktorej tranzyc
 print("--------------------------")
 
 while True:
+    draw_graph(current_master.current_state.name)
     print("--------------------------")
     print("Twój aktualny stan:")
     print(current_master.current_state.name)
@@ -144,10 +145,9 @@ while True:
     print("Twoje obecne możliwe tranzycje to:")
     show_moves(current_master.current_state)
     print("-------------------")
-    if current_master == master:
-        draw_master(current_master.current_state.name)
-    else:
-        draw_slave_graph(current_master.current_state.name)
+
+
+
 
     x = input("Wpisz wybrana tranzycje: ")
     if x == str('quit'):
@@ -159,20 +159,25 @@ while True:
             print("Przejście do podprocesu")
             master_transitions[x]._run(current_master)
             current_master = slave
+            draw_graph(current_master.current_state.name)
             continue
         elif x == str("s_1_4") or x ==  str("s_2_4") or x == str("s_3_4"):
             print("Powrót do głównego procesu")
             slave_transitions[x]._run(current_master)
             slave_transitions['s_4_0']._run(current_master)
             current_master = master
+            draw_graph(current_master.current_state.name)
             continue
 
         if current_master == master:
             master_transitions[x]._run(current_master)
         else:
             slave_transitions[x]._run(current_master)
+
+        draw_graph(current_master.current_state.name)
     else:
         print("Zła wartość!, aby wyjść wpisz quit")
+
 print("-------------------")
 print("Nastąpiło wyjście z programu")
 print("-------------------")
