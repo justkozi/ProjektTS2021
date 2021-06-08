@@ -15,10 +15,9 @@
 cd ~/catkin_ws/src
 git clone https://github.com/ArduPilot/ardupilot.git
 ardupilot/Tools/environment_install/install-prereqs-ubuntu.sh -y
-pip3 install --upgrade pymavlink MAVProxy --user
+pip3 install --upgrade pymavlink MAVProxy --user dronekit networkx 
 git clone https://github.com/justkozi/ProjektTS2021.git
 
-pip install dronekit networkx 
 ```
 https://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html
 ### Uruchamianie:
