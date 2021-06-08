@@ -2,6 +2,8 @@ from statemachine import State
 from nx import *
 from transitions import *
 from generator import *
+from droneComm import *
+from  missionHandler import *
 
 
 def is_valid(available_states, test_state):
@@ -41,7 +43,7 @@ master = [
 ]
 
 slave = [
-    {"name": "Proces sprawdzania obiektu na ziemi",  # 0
+    {"name": "Podproces sprawdzania obiektu na ziemi",  # 0
      "initial": True,
      "value": "sprawdzanie_obiektu"},
 
@@ -133,8 +135,12 @@ current_master_state = 0
 current_slave_state = 0
 
 print("********START************")
-print("Aby dokonać przejscia podaj wartosc z ktorej tranzycji_do ktorej tranzycji, aby wyjsc wpisz quit")
+tryb = input("Wybierz tryb [automat] lub [reczny]: ")
 print("--------------------------")
+if tryb == str('reczny'):
+    print("Aby dokonać przejscia podaj wartosc z ktorej tranzycji_do ktorej tranzycji, aby wyjsc wpisz quit")
+
+
 
 while True:
     draw_graph(current_master.current_state.name)
@@ -142,14 +148,18 @@ while True:
     print("Twój aktualny stan:")
     print(current_master.current_state.name)
     print("--------------------------")
-    print("Twoje obecne możliwe tranzycje to:")
-    show_moves(current_master.current_state)
-    print("-------------------")
+    if tryb == str('reczny'):
+        print("Twoje obecne możliwe tranzycje to:")
+        show_moves(current_master.current_state)
+        print("-------------------")
 
+        x = input("Wpisz wybrana tranzycje: ")
+    elif tryb == str('automat'):
+        x = whatDo(current_master.current_state.name)
+        print("Twoje obecne możliwe tranzycje to:")
+        show_moves(current_master.current_state)
+        print("Wybrano: ", x)
 
-
-
-    x = input("Wpisz wybrana tranzycje: ")
     if x == str('quit'):
         break
     elif is_valid(current_master.current_state, x):
@@ -161,7 +171,7 @@ while True:
             current_master = slave
             draw_graph(current_master.current_state.name)
             continue
-        elif x == str("s_1_4") or x ==  str("s_2_4") or x == str("s_3_4"):
+        elif x == str("s_1_4") or x ==  str("s_2_4") or x == str("s_3_4") or x == str("s_5_4"):
             print("Powrót do głównego procesu")
             slave_transitions[x]._run(current_master)
             slave_transitions['s_4_0']._run(current_master)

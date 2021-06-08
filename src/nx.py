@@ -52,7 +52,7 @@ def draw_graph(state):
     ]
 
     s_nodes = [
-        "Proces sprawdzania obiektu na ziemi",
+        "Podproces sprawdzania obiektu na ziemi",
         "Sprawdź jakiego koloru jest pole pod dronem",
         "Proces zrzutu kulek o kolorze A",
         "Proces zrzutu kulek o kolorze B",
@@ -61,7 +61,7 @@ def draw_graph(state):
     ]
 
     s_nodes_alt_name = [
-        "Proces sprawdzania \nobiektu na ziemi",
+        "Podproces sprawdzania \nobiektu na ziemi",
         "Sprawdź jakiego \nkoloru jest pole \npod dronem",
         "Proces zrzutu \nkulek o kolorze A",
         "Proces zrzutu \nkulek o kolorze B",
@@ -151,7 +151,7 @@ def draw_graph(state):
     nx.draw(s, **s_options)
     plt.draw()
     plt.pause(0.1)
-    plt.clf()
+    # plt.clf()
 
 
 def draw_graphs():
