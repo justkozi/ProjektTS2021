@@ -23,12 +23,12 @@ https://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html
 ### Uruchamianie:
 Terminal 1 (Uruchomienie SITL):
 ```
-cd ~/catkin_ws/src/arduplane/Arducopter
+cd ~/catkin_ws/src/ardupilot/Arducopter
 sim_vehicle.py -v ArduCopter --console --map -L KSFO
 ```
 Terminal 2 (Uruchomienie wizualizacji 3D):
 ```
-cd ~/catkin_ws/src/arduplane/Tools/autotest
+cd ~/catkin_ws/src/ardupilot/Tools/autotest
 ./fg_quad_view.sh
 ```
 Terminal 3 (Uruchomienie State Machine):
